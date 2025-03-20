@@ -1,74 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт друзей</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сайт для друзей</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="sidebar">
-        <button id="menu-button">☰</button>
-        <div id="menu" class="hidden">
-            <ul>
-                <li><a href="#schedule">Расписание игр</a></li>
-                <li><a href="#posts">Посты</a></li>
-                <li><button id="change-role">Сменить роль</button></li>
-            </ul>
+  <!-- Меню -->
+  <div id="menu" class="menu">
+    <div id="menu-icon" class="menu-icon">
+      &#9776;
+    </div>
+    <ul id="menu-list" class="menu-list">
+      <li><a href="#links">Коллекция ссылок</a></li>
+      <li><a href="#schedule">Расписание игр</a></li>
+    </ul>
+  </div>
+
+  <!-- Основной контент -->
+  <div id="content" class="content">
+    <section id="links" class="section">
+      <h2>Коллекция ссылок</h2>
+      <p>Здесь будут ваши ссылки.</p>
+    </section>
+
+    <section id="schedule" class="section">
+      <h2>Расписание игр</h2>
+      <div id="game-schedule" class="schedule-container">
+        <div class="cloud">
+          <textarea id="schedule-text" class="schedule-text" readonly></textarea>
         </div>
-    </div>
-    
-    <div id="content">
-        <header>
-            <h1>Привет, друзья!</h1>
-        </header>
-        
-        <section id="schedule">
-            <h2>Расписание игр</h2>
-            <ul>
-                <li>Игра 1: 15:00 - 16:00</li>
-                <li>Игра 2: 16:30 - 17:30</li>
-            </ul>
-        </section>
-        
-        <section id="posts">
-            <h2>Посты</h2>
-            <div id="posts-container"></div>
-            <form id="post-form" style="display: none;">
-                <input type="text" id="post-input" placeholder="Напишите свой пост..." required>
-                <button type="submit">Добавить пост</button>
-            </form>
-        </section>
-    </div>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let role = localStorage.getItem("userRole") || "visitor";
-            applyRole(role);
+      </div>
+    </section>
 
-            document.getElementById("menu-button").addEventListener("click", function() {
-                document.getElementById("menu").classList.toggle("hidden");
-            });
+    <!-- Кнопка смены роли -->
+    <button id="change-role-btn" class="change-role-btn">Сменить роль</button>
+  </div>
 
-            document.getElementById("change-role").addEventListener("click", function() {
-                role = (role === "visitor") ? "editor" : "visitor";
-                localStorage.setItem("userRole", role);
-                applyRole(role);
-            });
-        });
-
-        function applyRole(role) {
-            if (role === "editor") {
-                document.getElementById("post-form").style.display = "flex";
-            } else {
-                document.getElementById("post-form").style.display = "none";
-            }
-        }
-    </script>
-</body>
-</html>
-
-
-  <script src="javascript.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
