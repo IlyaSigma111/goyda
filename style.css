@@ -1,106 +1,59 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: white;
-  color: #003366; /* Темно-синий цвет */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
 }
-
 .menu {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 250px;
-  height: 100%;
-  background-color: #003366;
-  color: white;
-  display: none;
-  flex-direction: column;
-  padding-top: 10px;
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #1e3a8a;
+    color: white;
+    padding: 15px;
+    transition: 0.3s;
 }
-
-.menu-icon {
-  font-size: 30px;
-  cursor: pointer;
-  color: white;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
 }
-
-.menu-list {
-  list-style: none;
-  padding: 20px;
+.menu-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
 }
-
-.menu-list li {
-  margin: 20px 0;
+.clouds {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    flex-wrap: wrap;
 }
-
-.menu-list li a {
-  color: white;
-  text-decoration: none;
-}
-
-.content {
-  margin-left: 0;
-  transition: margin-left 0.3s ease-in-out;
-  padding: 20px;
-}
-
-.section {
-  margin-bottom: 20px;
-}
-
 .cloud {
-  background: #b3c7e6;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px 0;
-  width: fit-content;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    min-width: 150px;
+    max-width: 200px;
 }
-
-.schedule-text {
-  width: 300px;
-  height: 150px;
-  background: transparent;
-  border: none;
-  resize: none;
-  padding: 10px;
-  font-size: 16px;
-  color: #003366;
+.role-switch {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    padding: 5px;
+    background: white;
+    border: 1px solid #1e3a8a;
+    cursor: pointer;
 }
-
-.change-role-btn {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background-color: #003366;
-  color: white;
-  border: none;
-  padding: 10px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.change-role-btn:hover {
-  background-color: #005080;
-}
-
-@media (max-width: 768px) {
-  .menu {
-    width: 200px;
-  }
-
-  .content {
-    margin-left: 0;
-  }
-
-  #menu-list {
-    padding-top: 30px;
-  }
-}
+.hidden { display: none; }
