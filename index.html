@@ -1,43 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сайт для друзей</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMV Studio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Меню -->
-  <div id="menu" class="menu">
-    <div id="menu-icon" class="menu-icon">
-      &#9776;
+    <div class="menu" id="menu">
+        <span class="menu-btn" onclick="toggleMenu()">&#9776;</span>
+        <a href="#">Коллекция ссылок</a>
+        <a href="#">Расписание игр</a>
+        <button class="role-switch" onclick="toggleRole()">Сменить роль</button>
     </div>
-    <ul id="menu-list" class="menu-list">
-      <li><a href="#links">Коллекция ссылок</a></li>
-      <li><a href="#schedule">Расписание игр</a></li>
-    </ul>
-  </div>
+    
+    <div class="clouds">
+        <div class="cloud">Содержимое 1</div>
+        <div class="cloud">Содержимое 2</div>
+        <div class="cloud">Содержимое 3</div>
+    </div>
 
-  <!-- Основной контент -->
-  <div id="content" class="content">
-    <section id="links" class="section">
-      <h2>Коллекция ссылок</h2>
-      <p>Здесь будут ваши ссылки.</p>
-    </section>
-
-    <section id="schedule" class="section">
-      <h2>Расписание игр</h2>
-      <div id="game-schedule" class="schedule-container">
-        <div class="cloud">
-          <textarea id="schedule-text" class="schedule-text" readonly></textarea>
-        </div>
-      </div>
-    </section>
-
-    <!-- Кнопка смены роли -->
-    <button id="change-role-btn" class="change-role-btn">Сменить роль</button>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
