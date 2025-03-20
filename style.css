@@ -1,92 +1,77 @@
 body {
     font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
-    color: #fff;
-    text-align: center;
-}
-
-#sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    padding-top: 10px;
-}
-
-#menu-button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    margin-left: 15px;
 }
 
 #menu {
-    display: none;
-    flex-direction: column;
-    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
 }
 
 #menu.hidden {
+    left: -250px;
+}
+
+#menu-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+#posts-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
 
-#menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-#menu li {
+.post {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px;
     margin: 10px 0;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
 }
 
-#menu a, #change-role {
-    color: #fff;
-    text-decoration: none;
-    background: #007bff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    display: block;
+.new-post {
+    animation: popIn 0.4s ease-out forwards;
 }
 
-#change-role {
-    border: none;
-    cursor: pointer;
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
-form {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-input {
-    padding: 10px;
-    margin-right: 10px;
-}
-
-button {
-    padding: 10px;
-    background: #007bff;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
+/* Адаптивность */
 @media (max-width: 600px) {
-    body {
-        font-size: 14px;
+    #posts-container {
+        width: 100%;
     }
-    #sidebar {
-        width: 50px;
-    }
-    #menu-button {
-        font-size: 20px;
+
+    .post {
+        width: 90%;
     }
 }
